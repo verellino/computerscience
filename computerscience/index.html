@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,29 +9,41 @@
     <title>Computer Science International Undergraduate Program UGM</title>
     <link rel="stylesheet" href="css\main.css">
 </head>
+
 <body>
     <!--hero section-->
     <nav>
-        <div class="logobox">
+        <a class="logobox">
             <img src="img\Lambang UGM-putih.png" alt="University Gadjah Mada" class="logo">
             <div class="logotype">
                 <h4>Computer Science</h4>
                 <h4>Gadjah Mada University</h4>
             </div>
-            </div>
-        <div class="menubar">
+        </a>
+        <div class="menubar" onclick="openNav()">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-    <section class="hero">
-    <div class="title">
-        <h1>Computer Science</h1>
-        <h2>International Undergraduate Program</h2>
-        <div class="coursebox">
-            <h3>COURSES</h3>
-            <i class="fas fa-arrow-right"></i>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">Home</a>
+            <a href="#">Departement</a>
+            <a href="#">Program</a>
+            <a href="#">Research</a>
+            <a href="#">Lecturer</a>
+            <a href="#">Academic</a>
         </div>
     </div>
+    <section class="hero">
+        <div class="title">
+            <h1>Computer Science</h1>
+            <h2>International Undergraduate Program</h2>
+            <div class="coursebox">
+                <h3>COURSES</h3>
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
     </section>
 
     <!--links-->
@@ -51,14 +64,18 @@
 
     <!--news slider-->
     <section class="slides">
-        <h1>Judul Berita</h1>
+        <div class="slides-type">
+            <h1>Judul Berita</h1>
+            <p>Paragraf singkat tentang berita ini. Menjelaskan apa yang terjadi. Ya 5W1H lah. Begitu. Tapi ini kurang
+                panjang. Butuh Lorem Ipsum blablabla.</p>
+        </div>
+
         <h2>1/5</h2>
-        <p>Paragraf singkat tentang berita ini. Menjelaskan apa yang terjadi. Ya 5W1H lah. Begitu. Tapi ini kurang panjang. Butuh Lorem Ipsum blablabla.</p>
         <div class="slideimg"></div>
     </section>
-    
+
     <div class="divlinks">
-    <!--study abroad-->
+        <!--study abroad-->
         <a class="studyabroad">
             <h2>STUDY ABROAD</h2>
         </a>
@@ -69,41 +86,6 @@
             </div>
         </a>
     </div>
-
-    <!--footerlinks-->
-    <section class="footerlinks">
-        <div class="footerrow">
-            <div class="footercolumn">
-                <h3>STUDY</h3>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-            </div>
-            <div class="footercolumn">
-                <h3>LIFE</h3>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-            </div>
-            <div class="footercolumn">
-                <h3>NEW STUDENTS</h3>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-            </div>
-            <div class="footercolumn">
-                <h3>EXPLORE</h3>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-                <li><a href="#">Lorem Ipsum</a></li>
-            </div>
-        </div>
-    </section>
-    
     <!--footer-->
     <section class="footer">
         <div class="footerbox">
@@ -120,5 +102,15 @@
         </div>
         <h5>2019 Computer Science Gadjah Mada University</h5>
     </section>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
 </body>
+
 </html>

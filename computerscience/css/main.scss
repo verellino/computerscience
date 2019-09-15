@@ -1,11 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 html {
     -webkit-text-size-adjust: none;
     -webkit-font-smoothing: subpixel-antialiased;
     -webkit-font-smoothing: antialiased;
 }
 
-a,body,button,div,footer,form,h1,h2,h3,h4,h5,header,html,img,input,label,li,nav,p,select,span,table,textarea,ul {
+a,
+body,
+button,
+div,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+header,
+html,
+img,
+input,
+label,
+li,
+nav,
+p,
+select,
+span,
+table,
+textarea,
+ul {
     margin: 0;
     padding: 0;
     border: 0;
@@ -14,11 +38,15 @@ a,body,button,div,footer,form,h1,h2,h3,h4,h5,header,html,img,input,label,li,nav,
     font-size: 100%
 }
 
-li,ul {
+li,
+ul {
     list-style: none
 }
 
-button,input,select,textarea {
+button,
+input,
+select,
+textarea {
     display: block;
     box-sizing: border-box;
     border-radius: 0;
@@ -28,11 +56,14 @@ button,input,select,textarea {
     color: inherit
 }
 
-button:focus,input:focus,textarea:focus {
+button:focus,
+input:focus,
+textarea:focus {
     outline: none
 }
 
-button:hover,input[type=submit]:hover {
+button:hover,
+input[type=submit]:hover {
     cursor: pointer
 }
 
@@ -50,16 +81,22 @@ a {
     cursor: pointer;
 }
 
-a,img,picture,svg,video {
+a,
+img,
+picture,
+svg,
+video {
     display: block
 }
 
-img,video {
+img,
+video {
     width: 100%;
     height: auto
 }
 
-iframe,svg {
+iframe,
+svg {
     width: 100%;
     height: 100%
 }
@@ -70,7 +107,7 @@ iframe {
     left: 0
 }
 
-section{
+section {
     position: relative;
 }
 
@@ -79,14 +116,23 @@ html {
     cursor: default;
     -webkit-tap-highlight-color: transparent
 }
-.element::-webkit-scrollbar { width: 0 !important }
-.element { overflow: -moz-scrollbars-none; }
-.element { -ms-overflow-style: none; }
+
+.element::-webkit-scrollbar {
+    width: 0 !important
+}
+
+.element {
+    overflow: -moz-scrollbars-none;
+}
+
+.element {
+    -ms-overflow-style: none;
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #8293cd;
-    color: #000;
+    background: rgb(145, 150, 160);
+    color: #fff;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -95,184 +141,306 @@ body {
     position: relative;
     font-weight: 700;
 }
-nav{
+
+nav {
     display: flex;
     justify-content: space-between;
     width: 90vw;
-    position: absolute;
+    position: fixed;
+    z-index: 99;
     color: #fff;
 }
-.logobox{
+
+.logobox {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 300;
+    cursor: pointer;
 }
-.logo{
+
+.logo {
     display: inline-block;
     width: 60px;
     height: 60px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
-.menubar{
+
+.menubar {
     font-size: 30px;
     cursor: pointer;
 }
 
 .hero {
     display: flex;
-    width: 100%;
     height: 100vh;
+    margin: -30px -5vw 0 -5vw;
+    padding: 0 5vw;
     align-items: center;
+    background: url("https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=3026&q=80");
+    background-size: cover;
+    background-position: 10,0;
+    background-color: rgba(0, 0, 0, 0.7);
 }
-h1{
+
+h1 {
     font-size: 4em;
     letter-spacing: -2px;
 }
-h2{
+
+h2 {
     font-size: 2em;
 }
-.coursebox{
+
+.coursebox {
     margin-top: 20px;
     display: flex;
     width: 200px;
     padding: 10px 0 10px 0;
     justify-content: space-evenly;
     align-items: center;
-    border: 4px solid #000;
+    border: 4px solid #fff;
     letter-spacing: 1px;
     font-size: 20px;
 }
+
+/*menu overlay*/
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #002133;
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    padding-left: 5vw;
+}
+
+.overlay a {
+    padding: 20px;
+    display: block;
+    font-size: 3em;
+    transition: 0.3s;
+    color: #fff;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #8293cd;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    padding: 0;
+    top: 30px;
+    right: 5vw;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
+
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
 /*links*/
-.links{
-    a{
+.links {
+    a {
         padding-bottom: 3vw;
     }
 }
-h3{
-    font-size: 1.5em; 
+
+h3 {
+    font-size: 1.5em;
 }
-.boxlink{
+
+.boxlink {
     display: inline-block;
     position: relative;
     width: 50%;
     height: 30vw;
     margin-top: -3vh;
-    background: #fff;
-    h1{
+    background-image: url("https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80");
+    background-size: cover;
+    filter: grayscale(50%);
+
+    h1 {
         position: absolute;
         top: -0.8em;
         left: -0.4em;
     }
-    .out{
+
+    .out {
         position: absolute;
         bottom: 0;
         right: -10em;
     }
 
 }
-.boxlink-right{
+
+.boxlink-right {
     position: relative;
     left: 38vw;
     width: 50vw;
     height: 30vw;
     max-height: 500px;
     margin: 100px 0;
-    background: #fff;
-    h1{
+    background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80");
+    background-size: cover;
+
+    h1 {
         position: absolute;
         top: -0.8em;
         left: -0.4em;
     }
-    .out{
+
+    .out {
         position: absolute;
         bottom: 0;
         left: -10em;
     }
 
 }
+
 /*sliders*/
-.slides{
+.slides {
     display: block;
-    overflow: auto;
     position: relative;
     margin: 50px 0;
-    padding: 300px 0;
-    h2{
+    padding: 400px 0;
+
+    h2 {
         position: absolute;
-        bottom: 20px;
+        bottom: 10px;
     }
-    p{
+}
+
+.slides-type {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    transform: translate(-5%, -40%);
+
+    p {
+        margin-top: 25px;
         font-weight: 300;
         width: 30em;
         line-height: 1.5;
     }
 }
-.slideimg{
+
+.slideimg {
     position: absolute;
     z-index: -1;
     width: 50vw;
+    min-width: 500px;
     height: 40vw;
-    background-color: #fff;
+    min-height: 400px;
+    background-image: url("https://images.unsplash.com/photo-1531545514256-b1400bc00f31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80");
+    background-size: cover;
     left: 60%;
     margin-left: -25vw;
     top: 50%;
     margin-top: -20vw;
 }
 
-.divlinks{
-    width: 100vw;
+.divlinks {
     margin: 0 -5vw;
     height: 50vh;
     display: flex;
     align-items: center;
 
 }
+
 /*studyabroad*/
-.studyabroad{
+.studyabroad {
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("https://images.unsplash.com/photo-1531014968147-c89ae1be1360?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2988&q=80");
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+.studyabroad h2{
+    color: #000;
+}
+.studyabroad:hover{
+    color: #002133;
+    transition: 0.5s;
+    filter: grayscale(20%);
+}
+
+.apply {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #002133;
+    transition: 0.5s;
+}
+.apply:hover{
     background: #fff;
-}
-.apply{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #aaa;
+    color: #002133;
+    transition: 0.5s;
 }
 
 
-.footerrow{
+.footerrow {
     padding: 50px 0;
     -webkit-column-count: 4;
     -moz-column-count: 4;
     column-count: 4;
-    li{
+
+    li {
         font-weight: 300;
         margin: 10px 0;
     }
 }
-.footer{
+
+.footer {
     background: #002133;
     margin: 0 -5vw;
     padding: 0 5vw 20px 5vw;
     color: #fff;
     font-weight: 300;
-    h5{
+
+    h5 {
         font-size: 12px;
     }
 }
-.footerbox{
+
+.footerbox {
     display: flex;
     font-weight: 300;
     align-items: top;
     padding: 40px 0;
-    p{
+
+    p {
         padding-left: 30px;
         display: inline-block;
         font-size: 14px;
